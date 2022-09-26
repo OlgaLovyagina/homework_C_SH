@@ -67,8 +67,127 @@ void Task3()
     
 
 }
-
 //Task1();
 //Task2();
-Task3();
+//Task3();
+
+
+
+
+// Домашнее задание 3
+
+
+
+#region Task19
+/// <summary>
+///Напишите программу, которая принимает на вход пятизначное число и проверяет,
+///является ли оно палиндромом.
+/// </summary>
+
+
+void Task19()
+{
+    Console.WriteLine("Введите пятизначное целое число: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+    int num = n;
+    int rev = 0;
+
+    while (n > 0)
+    {
+        rev = rev * 10 + n % 10;
+        n = n / 10;
+    }
+    if (num == rev)
+    {
+        Console.WriteLine("Введеное число является полиндромом ");
+    }
+    else
+    {
+        Console.WriteLine("Введеное число не является полиндромом ");
+    }
+}
+#endregion
+
+#region Task21_1
+/// <summary>
+///Напишите программу, которая принимает на вход координаты двух точек и
+///находит расстояние между ними в 3D пространстве.
+/// </summary>
+/// 
+
+void Task21_1()
+{
+    Console.WriteLine("Введите координаты точки А: ");
+
+    Console.Write("X: ");
+    int ax = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Y: ");
+    int ay = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Z: ");
+    int az = Convert.ToInt32(Console.ReadLine());
+
+
+    Console.WriteLine("Введите координаты точки B: ");
+
+    Console.Write("X: ");
+    int bx = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Y: ");
+    int by = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Z: ");
+    int bz = Convert.ToInt32(Console.ReadLine());
+
+
+    double length = Math.Sqrt((bx - ax) * (bx - ax) + (by - ay) * (by - ay)
+        + (bz - az) * (bz - az));
+    length = Math.Round(length, 2);
+    Console.WriteLine($"Расстояние между точками {length}");
+}
+#endregion
+
+#region Task23
+/// <summary>
+///Напишите программу, которая принимает на
+///вход число(N) и выдаёт таблицу кубов чисел от 1 до N.
+/// </summary>
+/// 
+void Task23()
+{
+    Console.WriteLine("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    int i = 1;
+    Result(num, i);
+}
+
+void Result(int num, int i)
+{
+
+    if (num > i)
+    {
+        while (i <= num)
+        {
+            Console.WriteLine($"Число  {i}  |  Куб числа = {Math.Pow((i), 3)}");
+            i++;
+        }
+    }
+    else
+    {
+        while (i >= num)
+        {
+            Console.WriteLine($"Число  {num}  |  Куб числа = {Math.Pow((num), 3)}");
+            num++;
+        }
+    }
+}
+
+
+
+
+#endregion
+
+
+
+//Task19();
+//Task21_1();
+Task23();
+
 Console.ReadLine();
